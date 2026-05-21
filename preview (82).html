@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Canada Sports Betting | NHL Final Four Blueprint</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+:root{
+  --csb-red:#EF0D23;
+  --csb-red-dark:#B90A1B;
+  --csb-black:#111827;
+  --csb-text:#1f2937;
+  --csb-muted:#6b7280;
+  --csb-border:#e5e7eb;
+  --csb-soft:#f9fafb;
+  --csb-red-soft:#fff1f2;
+  --csb-green:#16a34a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:var(--csb-text);font-family:Poppins,Arial,sans-serif;}
+body{min-width:320px;}
+.csb-page{width:100%;max-width:720px;margin:0 auto;background:#fff;}
+.csb-hero{background:radial-gradient(circle at 92% 10%,rgba(239,13,35,.28),transparent 32%),linear-gradient(135deg,#0b0f18 0%,#111827 58%,#26040a 100%);color:#fff;padding:26px 22px 24px;border-bottom:6px solid var(--csb-red);}
+.csb-brand{display:inline-flex;align-items:center;gap:8px;background:var(--csb-red);color:#fff;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:11px;padding:8px 10px;margin-bottom:14px;}
+.csb-brand:before{content:'';width:8px;height:8px;border-radius:999px;background:#fff;}
+h1{margin:0; font-size:clamp(28px,5vw,44px); line-height:1.02; letter-spacing:-.04em; font-weight:900; text-transform:uppercase;}
+.csb-hero p{max-width:650px;margin:12px 0 0;color:#f3f4f6;font-size:14px;line-height:1.62;}
+.csb-section{padding:22px;border-bottom:1px solid var(--csb-border);}
+.csb-kicker{display:inline-flex;background:#111827;color:#fff;border-left:5px solid var(--csb-red);padding:8px 11px;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;margin:0 0 13px;}
+h2{margin:0 0 10px;color:var(--csb-black);font-size:25px;line-height:1.1;font-weight:900;letter-spacing:-.02em;text-transform:uppercase;}
+h3{margin:0 0 8px;color:var(--csb-black);font-size:18px;line-height:1.15;font-weight:900;}
+p{font-size:14px;line-height:1.65;margin:0 0 10px;color:#374151;}
+.csb-key-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.csb-card{background:#fff;border:1px solid var(--csb-border);border-top:4px solid var(--csb-red);padding:14px;box-shadow:0 8px 20px rgba(17,24,39,.06);}
+.csb-card.dark{background:linear-gradient(135deg,#111827,#23040a);color:#fff;border-color:#111827;border-top-color:var(--csb-red);}
+.csb-card.dark h3,.csb-card.dark p{color:#fff}
+.csb-stat{display:block;color:var(--csb-red);font-size:27px;line-height:1;font-weight:900;letter-spacing:-.04em;margin:0 0 7px;}
+.csb-card.dark .csb-stat{color:#fff;}
+.csb-note{font-size:12px;color:var(--csb-muted);line-height:1.45;}
+.csb-callout{background:#111827;color:#fff;border-left:7px solid var(--csb-red);padding:18px;margin-top:14px;box-shadow:0 12px 28px rgba(17,24,39,.18);}
+.csb-callout p{color:#fff;font-size:15px;line-height:1.65;margin:0;}
+.csb-callout strong{color:#fff;}
+.csb-tabs{border:1px solid var(--csb-border);background:#fff;box-shadow:0 8px 22px rgba(17,24,39,.06);}
+.csb-tab-nav{display:flex;gap:6px;flex-wrap:wrap;background:var(--csb-soft);border-bottom:1px solid var(--csb-border);padding:10px;}
+.csb-tab-btn{appearance:none;border:1px solid var(--csb-border);background:#fff;color:#111827;font-family:Poppins,Arial,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.04em;font-size:11px;padding:10px 12px;cursor:pointer;}
+.csb-tab-btn.active{background:var(--csb-red);border-color:var(--csb-red);color:#fff;}
+.csb-tab-panel{display:none;padding:14px;}
+.csb-tab-panel.active{display:block;}
+.csb-panel-intro{background:var(--csb-red-soft);border-left:5px solid var(--csb-red);padding:12px 14px;margin:0 0 12px;}
+.csb-panel-intro p{font-size:13px;margin:0;}
+.csb-table-scroll{width:100%;overflow:auto;border:1px solid var(--csb-border);scrollbar-width:thin;scrollbar-color:var(--csb-red) #f3f4f6;}
+.csb-table-scroll::-webkit-scrollbar{height:12px;width:12px;}
+.csb-table-scroll::-webkit-scrollbar-track{background:#f3f4f6;border-radius:999px;}
+.csb-table-scroll::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--csb-red),var(--csb-red-dark));border-radius:999px;border:2px solid #f3f4f6;}
+.csb-table-scroll::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,var(--csb-red-dark),#8f0815);}
+.csb-method-wrap{background:var(--csb-soft);border:1px solid var(--csb-border);padding:16px 16px 4px;margin-top:12px;}
+.csb-method-list{margin:0;padding:0;list-style:none;}
+.csb-method-list li{position:relative;padding-left:18px;margin:0 0 12px;color:#374151;font-size:14px;line-height:1.65;}
+.csb-method-list li:before{content:'•';position:absolute;left:0;top:0;color:var(--csb-red);font-weight:900;}
+.csb-method-list strong{color:#111827;}
+table{width:100%;border-collapse:collapse;background:#fff;min-width:760px;}
+th{background:#111827;color:#fff;text-align:left;padding:12px 10px;font-size:11px;line-height:1.25;text-transform:uppercase;letter-spacing:.06em;border-right:1px solid rgba(255,255,255,.12);white-space:nowrap;}
+td{padding:11px 10px;border-top:1px solid var(--csb-border);font-size:12.5px;line-height:1.35;vertical-align:middle;}
+tbody tr:nth-child(even) td{background:#fafafa;}
+.cat{display:inline-flex;padding:5px 7px;background:#fff1f2;color:#9f1239;border:1px solid #fecdd3;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
+.positive,.yes{font-weight:900;color:#166534;}
+.no{font-weight:900;color:#991b1b;}
+.shared-badge{display:inline-flex;background:#111827;color:#fff;border-left:4px solid var(--csb-red);padding:6px 8px;font-size:10.5px;font-weight:900;text-transform:uppercase;}
+.csb-roster-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;}
+.csb-roster-metric{background:#fff;border:1px solid var(--csb-border);border-top:4px solid #111827;padding:13px;}
+.csb-roster-metric span{display:block;font-size:24px;font-weight:900;color:var(--csb-red);line-height:1;margin-bottom:6px;}
+.csb-team-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;}
+.csb-team-card{background:#fff;border:1px solid var(--csb-border);padding:13px;border-left:5px solid var(--csb-red);}
+.csb-team-card strong{display:block;font-size:14px;color:#111827;margin-bottom:5px;}
+.csb-method{font-size:12.5px;color:#4b5563;line-height:1.6;}
+
+.csb-bullets{margin:12px 0 0;padding:0;list-style:none;}
+.csb-bullets li{position:relative;padding-left:18px;margin:0 0 10px;color:#374151;font-size:14px;line-height:1.6;}
+.csb-bullets li:before{content:'•';position:absolute;left:0;top:0;color:var(--csb-red);font-weight:900;}
+.csb-bullets li strong{color:#111827;}
+.csb-findings-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px;}
+.csb-find-card{background:#fff;border:1px solid var(--csb-border);border-top:4px solid var(--csb-red);padding:13px;box-shadow:0 8px 20px rgba(17,24,39,.05);}
+.csb-find-card.dark{background:linear-gradient(135deg,#111827,#23040a);color:#fff;border-color:#111827;}
+.csb-find-card.dark h3,.csb-find-card.dark p{color:#fff;}
+.csb-find-num{display:block;font-size:24px;line-height:1;font-weight:900;letter-spacing:-.03em;color:var(--csb-red);margin:0 0 7px;}
+.csb-find-card.dark .csb-find-num{color:#fff;}
+.csb-find-card p{margin:0;font-size:13px;line-height:1.55;}
+.csb-list-box{background:var(--csb-soft);border:1px solid var(--csb-border);padding:12px 14px;margin-top:12px;}
+.csb-list-box h3{margin-bottom:2px;}
+.csb-pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;}
+.csb-pill{display:inline-flex;align-items:center;background:#fff1f2;color:#9f1239;border:1px solid #fecdd3;padding:7px 10px;font-size:11px;font-weight:800;line-height:1.2;text-transform:uppercase;letter-spacing:.04em;}
+
+
+.csb-data-hub-section .csb-tab-panel{padding:14px;}
+.csb-data-hub-section .csb-tab-nav{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:8px;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:var(--csb-red) #f3f4f6;}
+.csb-data-hub-section .csb-tab-nav::-webkit-scrollbar{height:8px;}
+.csb-data-hub-section .csb-tab-nav::-webkit-scrollbar-track{background:#f3f4f6;border-radius:999px;}
+.csb-data-hub-section .csb-tab-nav::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--csb-red),var(--csb-red-dark));border-radius:999px;border:2px solid #f3f4f6;}
+.csb-data-hub-section .csb-tab-nav::-webkit-scrollbar-thumb:hover{background:linear-gradient(90deg,var(--csb-red-dark),#8f0815);}
+.csb-data-hub-section .csb-tab-btn{flex:0 0 auto;white-space:nowrap;}
+.csb-data-hub-section table{min-width:920px;}
+.csb-data-hub-section td{white-space:normal;}
+.csb-data-hub-section .csb-table-scroll{max-height:520px;overflow:auto;}
+.csb-data-hub-section .csb-panel-intro{margin-bottom:12px;}
+.csb-data-table td:nth-child(1),.csb-data-table td:nth-child(2){font-weight:700;color:#111827;}
+
+@media(max-width:640px){.csb-key-grid,.csb-roster-grid,.csb-team-grid,.csb-findings-grid{grid-template-columns:1fr}.csb-section{padding:18px}.csb-hero{padding:22px 18px}table{min-width:820px}}
+</style>
+</head>
+<body>
+<div class='csb-page'>
+  <section class='csb-hero'>
+    <div class='csb-brand'>Canada Sports Betting analysis</div>
+    <h1>NHL Final Four Blueprint: Performance, Not Size, Defines Deep Playoff Runs</h1>
+    <p>The four remaining teams share a clear on-ice profile: they control the scoring battle, limit dangerous chances, get above-average goaltending and create more takeaways. But their roster profiles are less uniform, suggesting there is no single age-or-size formula behind a deep run.</p>
+  </section>
+
+  <section class='csb-section'>
+    <div class='csb-kicker'>Key findings</div>
+    <h2>What all four teams have in common</h2>
+    <p>Start with the combined final-four takeaway, then use the tabs to see each team's standout strengths in a more digestible way.</p>
+    <div class='csb-tabs js-tabs' id='csbFindingTabs' data-prefix='finding'>
+      <div class='csb-tab-nav'>
+        <button class='csb-tab-btn active' data-tab='overall'>All 4 teams</button>
+        <button class='csb-tab-btn' data-tab='CAR'>CAR</button>
+        <button class='csb-tab-btn' data-tab='COL'>COL</button>
+        <button class='csb-tab-btn' data-tab='VGK'>VGK</button>
+        <button class='csb-tab-btn' data-tab='MTL'>MTL</button>
+      </div>
+
+      <div class='csb-tab-panel active' id='finding-overall'>
+        <div class='csb-panel-intro'><p><strong>Combined final-four view:</strong> All four teams were better than the playoff-team average across <strong>5 shared categories</strong> and <strong>7 shared metrics</strong>.</p></div>
+        <div class='csb-findings-grid'>
+          <div class='csb-find-card dark'><span class='csb-find-num'>5</span><h3>Shared categories</h3><p><strong>Scoring, defence, danger suppression, goaltending and pressure</strong> were common strengths across the final four.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>7</span><h3>Shared metrics</h3><p>Goals share, goals per game, goals allowed, high-danger xG allowed, high-danger shots allowed, save percentage and takeaways.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>61.0%</span><h3>Goals share</h3><p>The final four averaged a <strong>61.0% goals share</strong>, compared with a <strong>47.3%</strong> playoff-team average.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>91.7%</span><h3>Save percentage</h3><p>The final four posted a <strong>91.7% save percentage</strong>, <strong>+2.0 percentage points</strong> above the playoff-team average.</p></div>
+        </div>
+        <div class='csb-list-box'>
+          <h3>Why this matters</h3>
+          <ul class='csb-bullets'>
+            <li><strong>Scoring:</strong> The final four averaged <strong>3.46 goals per game</strong>, versus <strong>2.73</strong> across playoff teams.</li>
+            <li><strong>Defence:</strong> They allowed <strong>2.28 goals per game</strong>, <strong>0.71 fewer</strong> than the playoff-team average.</li>
+            <li><strong>Danger suppression:</strong> They allowed only <strong>1.10 high-danger xG</strong> and <strong>3.38 high-danger shots</strong> per game.</li>
+            <li><strong>Pressure:</strong> They averaged <strong>5.03 takeaways per game</strong>, compared with <strong>4.72</strong> across playoff teams.</li>
+            <li><strong>Roster caveat:</strong> Three of the four are shorter and lighter than the playoff-team average, but only Montreal is younger, suggesting there is <strong>no single age-or-size blueprint</strong> for a deep playoff run.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class='csb-tab-panel' id='finding-CAR'>
+        <div class='csb-panel-intro'><p><strong>Carolina Hurricanes:</strong> Better than the playoff average in <strong>12 of 15</strong> selected metrics. The profile is built around elite defensive results, strong chance quality and puck control.</p></div>
+        <div class='csb-findings-grid'>
+          <div class='csb-find-card dark'><span class='csb-find-num'>12/15</span><h3>Metrics above average</h3><p>Carolina was above the playoff average in <strong>7 categories</strong>: scoring, chance quality, defence, danger suppression, goaltending, puck control and pressure.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>70.6%</span><h3>Goals share</h3><p><strong>+23.3 percentage points</strong> above the playoff-team average and the best mark among playoff teams.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>1.25</span><h3>Goals allowed per game</h3><p>Carolina allowed <strong>1.74 fewer goals per game</strong> than the playoff-team average of 2.99.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>4.33</span><h3>Expected goals for/game</h3><p>The Hurricanes generated <strong>1.15 more expected goals per game</strong> than the playoff-team average.</p></div>
+        </div>
+        <div class='csb-list-box'><h3>Key takeaway</h3><ul class='csb-bullets'><li><strong>Performance profile:</strong> Carolina stands out as the final-four team with the clearest defensive and chance-control profile.</li><li><strong>Shared strengths:</strong> Carolina is above the playoff-team average for goals share, goals per game, goals allowed, high-danger xG allowed, high-danger shots allowed, save percentage and takeaways.</li></ul></div>
+      </div>
+
+      <div class='csb-tab-panel' id='finding-COL'>
+        <div class='csb-panel-intro'><p><strong>Colorado Avalanche:</strong> Better than the playoff average in <strong>14 of 15</strong> selected metrics, giving Colorado the broadest all-round performance profile.</p></div>
+        <div class='csb-findings-grid'>
+          <div class='csb-find-card dark'><span class='csb-find-num'>14/15</span><h3>Metrics above average</h3><p>Colorado was above average in <strong>8 categories</strong>: scoring, chance quality, defence, danger suppression, goaltending, puck control, pressure and discipline.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>4.11</span><h3>Goals per game</h3><p>The Avalanche scored <strong>1.38 more goals per game</strong> than the playoff-team average.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>12.6%</span><h3>Shooting percentage</h3><p>Colorado finished <strong>3.1 percentage points</strong> above the playoff-team average.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>61.7%</span><h3>Goals share</h3><p>The Avalanche were <strong>+14.4 percentage points</strong> above the playoff-team average.</p></div>
+        </div>
+        <div class='csb-list-box'><h3>Key takeaway</h3><ul class='csb-bullets'><li><strong>Performance profile:</strong> Colorado has the most complete all-round profile in the dataset, finishing above the playoff average in 14 of 15 selected metrics.</li><li><strong>Shared strengths:</strong> Colorado is above the playoff-team average for goals share, goals per game, goals allowed, high-danger xG allowed, high-danger shots allowed, save percentage and takeaways.</li></ul></div>
+      </div>
+
+      <div class='csb-tab-panel' id='finding-VGK'>
+        <div class='csb-panel-intro'><p><strong>Vegas Golden Knights:</strong> Better than the playoff average in <strong>13 of 15</strong> selected metrics, combining efficient scoring with strong defensive suppression.</p></div>
+        <div class='csb-findings-grid'>
+          <div class='csb-find-card dark'><span class='csb-find-num'>13/15</span><h3>Metrics above average</h3><p>Vegas was above average in <strong>8 categories</strong>: scoring, chance quality, defence, danger suppression, goaltending, pressure, discipline and defensive effort.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>13.3%</span><h3>Shooting percentage</h3><p>The Golden Knights were <strong>+3.8 percentage points</strong> above the playoff-team average.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>0.96</span><h3>High-danger xG allowed/game</h3><p>Vegas allowed <strong>0.43 fewer high-danger expected goals per game</strong> than the playoff average.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>58.7%</span><h3>Goals share</h3><p>The Golden Knights were <strong>+11.4 percentage points</strong> above the playoff-team average.</p></div>
+        </div>
+        <div class='csb-list-box'><h3>Key takeaway</h3><ul class='csb-bullets'><li><strong>Performance profile:</strong> Vegas combines clinical finishing with the danger-suppression and goaltending profile shared across the final four.</li><li><strong>Shared strengths:</strong> Vegas is above the playoff-team average for goals share, goals per game, goals allowed, high-danger xG allowed, high-danger shots allowed, save percentage and takeaways.</li></ul></div>
+      </div>
+
+      <div class='csb-tab-panel' id='finding-MTL'>
+        <div class='csb-panel-intro'><p><strong>Montreal Canadiens:</strong> Better than the playoff average in <strong>9 of 15</strong> selected metrics. Montreal has the leanest profile of the four, but still clears every shared final-four category.</p></div>
+        <div class='csb-findings-grid'>
+          <div class='csb-find-card dark'><span class='csb-find-num'>9/15</span><h3>Metrics above average</h3><p>Montreal was above average in <strong>6 categories</strong>: scoring, defence, danger suppression, goaltending, pressure and defensive effort.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>12.2%</span><h3>Shooting percentage</h3><p>The Canadiens were <strong>+2.6 percentage points</strong> above the playoff-team average.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>53.1%</span><h3>Goals share</h3><p>Montreal was <strong>+5.8 percentage points</strong> above the playoff-team average.</p></div>
+          <div class='csb-find-card'><span class='csb-find-num'>3.50</span><h3>High-danger shots allowed/game</h3><p>The Canadiens allowed <strong>0.36 fewer high-danger shots per game</strong> than the playoff average.</p></div>
+        </div>
+        <div class='csb-list-box'><h3>Key takeaway</h3><ul class='csb-bullets'><li><strong>Performance profile:</strong> Montreal shows the shared final-four blueprint does not require being bigger or older than the playoff field.</li><li><strong>Shared strengths:</strong> Montreal is above the playoff-team average for goals share, goals per game, goals allowed, high-danger xG allowed, high-danger shots allowed, save percentage and takeaways.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class='csb-section'>
+    <div class='csb-kicker'>Interactive tables</div>
+    <h2>Final four vs playoff average, then team-by-team</h2>
+    <p>Start with the combined final-four view, then use the tabs to move into each individual team’s performance profile.</p>
+    <div class='csb-tabs js-tabs' id='csbTabs' data-prefix='tab'>
+      <div class='csb-tab-nav'>
+        <button class='csb-tab-btn active' data-tab='overall'>Final four vs playoff avg</button>
+        <button class='csb-tab-btn' data-tab='CAR'>CAR</button>
+        <button class='csb-tab-btn' data-tab='COL'>COL</button>
+        <button class='csb-tab-btn' data-tab='VGK'>VGK</button>
+        <button class='csb-tab-btn' data-tab='MTL'>MTL</button>
+      </div>
+      <div class='csb-tab-panel active' id='tab-overall'>
+        <div class='csb-panel-intro'><p><strong>All final-four teams vs playoff average:</strong> These are the seven metrics where Carolina, Colorado, Vegas and Montreal were all better than the playoff-team average.</p></div>
+        <div class='csb-table-scroll'><table><thead><tr><th>Category</th><th>Metric</th><th>Final Four Avg</th><th>Playoff Avg</th><th>Difference</th><th>% Difference</th></tr></thead><tbody>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Goals share</strong></td>
+          <td>61.0%</td>
+          <td>47.3%</td>
+          <td class='positive'>+13.7 pts</td>
+          <td class='positive'>+29.0%</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Goals per game</strong></td>
+          <td>3.46</td>
+          <td>2.73</td>
+          <td class='positive'>+0.73</td>
+          <td class='positive'>+26.8%</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defence</span></td>
+          <td><strong>Goals allowed per game</strong></td>
+          <td>2.28</td>
+          <td>2.99</td>
+          <td class='positive'>+0.71</td>
+          <td class='positive'>+23.9%</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Danger Suppression</span></td>
+          <td><strong>High-danger xG allowed per game</strong></td>
+          <td>1.10</td>
+          <td>1.39</td>
+          <td class='positive'>+0.29</td>
+          <td class='positive'>+20.9%</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Danger Suppression</span></td>
+          <td><strong>High-danger shots allowed per game</strong></td>
+          <td>3.38</td>
+          <td>3.86</td>
+          <td class='positive'>+0.48</td>
+          <td class='positive'>+12.4%</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Goaltending</span></td>
+          <td><strong>Save percentage</strong></td>
+          <td>91.7%</td>
+          <td>89.7%</td>
+          <td class='positive'>+2.0 pts</td>
+          <td class='positive'>+2.3%</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Pressure</span></td>
+          <td><strong>Takeaways per game</strong></td>
+          <td>5.03</td>
+          <td>4.72</td>
+          <td class='positive'>+0.31</td>
+          <td class='positive'>+6.6%</td>
+        </tr></tbody></table></div>
+      </div>
+
+      <div class='csb-tab-panel' id='tab-CAR'>
+        <div class='csb-panel-intro'><p><strong>Carolina Hurricanes:</strong> Carolina Hurricanes was better than the playoff average in 12 of 15 selected performance metrics. Key above-average categories: Scoring, Chance Quality, Defence, Danger Suppression, Goaltending, Puck Control, Pressure.</p></div>
+        <div class='csb-table-scroll'><table><thead><tr><th>Category</th><th>Metric</th><th>CAR value</th><th>Playoff Avg</th><th>Difference</th><th>% Difference</th><th>Rank</th><th>Better?</th><th>Final-four trait?</th></tr></thead><tbody>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Goals share</strong></td>
+          <td>70.6%</td>
+          <td>47.3%</td>
+          <td class='yes'>+23.3 pts</td>
+          <td class='yes'>+49.3%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Goals per game</strong></td>
+          <td>3.00</td>
+          <td>2.73</td>
+          <td class='yes'>+0.27</td>
+          <td class='yes'>+9.8%</td>
+          <td>9</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Shooting percentage</strong></td>
+          <td>8.9%</td>
+          <td>9.6%</td>
+          <td class='no'>-0.7 pts</td>
+          <td class='no'>-7.3%</td>
+          <td>9</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Chance Quality</span></td>
+          <td><strong>Expected goals share</strong></td>
+          <td>62.0%</td>
+          <td>49.1%</td>
+          <td class='yes'>+12.9 pts</td>
+          <td class='yes'>+26.4%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Chance Quality</span></td>
+          <td><strong>Expected goals for per game</strong></td>
+          <td>4.33</td>
+          <td>3.18</td>
+          <td class='yes'>+1.15</td>
+          <td class='yes'>+36.1%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defence</span></td>
+          <td><strong>Goals allowed per game</strong></td>
+          <td>1.25</td>
+          <td>2.99</td>
+          <td class='yes'>+1.74</td>
+          <td class='yes'>+58.2%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defence</span></td>
+          <td><strong>Expected goals against per game</strong></td>
+          <td>2.65</td>
+          <td>3.31</td>
+          <td class='yes'>+0.66</td>
+          <td class='yes'>+20.0%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Danger Suppression</span></td>
+          <td><strong>High-danger xG allowed per game</strong></td>
+          <td>0.92</td>
+          <td>1.39</td>
+          <td class='yes'>+0.47</td>
+          <td class='yes'>+34.1%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Danger Suppression</span></td>
+          <td><strong>High-danger shots allowed per game</strong></td>
+          <td>3.25</td>
+          <td>3.86</td>
+          <td class='yes'>+0.61</td>
+          <td class='yes'>+15.8%</td>
+          <td>4</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Goaltending</span></td>
+          <td><strong>Save percentage</strong></td>
+          <td>95.0%</td>
+          <td>89.7%</td>
+          <td class='yes'>+5.3 pts</td>
+          <td class='yes'>+5.9%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Puck Control</span></td>
+          <td><strong>Corsi share</strong></td>
+          <td>59.0%</td>
+          <td>49.9%</td>
+          <td class='yes'>+9.1 pts</td>
+          <td class='yes'>+18.3%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Puck Control</span></td>
+          <td><strong>Fenwick share</strong></td>
+          <td>59.0%</td>
+          <td>49.6%</td>
+          <td class='yes'>+9.4 pts</td>
+          <td class='yes'>+19.0%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Pressure</span></td>
+          <td><strong>Takeaways per game</strong></td>
+          <td>5.00</td>
+          <td>4.72</td>
+          <td class='yes'>+0.28</td>
+          <td class='yes'>+5.9%</td>
+          <td>7</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Discipline</span></td>
+          <td><strong>Penalties taken per game</strong></td>
+          <td>6.25</td>
+          <td>4.78</td>
+          <td class='no'>-1.47</td>
+          <td class='no'>-30.7%</td>
+          <td>15</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defensive Effort</span></td>
+          <td><strong>Blocked shots per game</strong></td>
+          <td>14.25</td>
+          <td>17.07</td>
+          <td class='no'>-2.82</td>
+          <td class='no'>-16.5%</td>
+          <td>14</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr></tbody></table></div>
+      </div>
+    
+      <div class='csb-tab-panel' id='tab-COL'>
+        <div class='csb-panel-intro'><p><strong>Colorado Avalanche:</strong> Colorado Avalanche was better than the playoff average in 14 of 15 selected performance metrics. Key above-average categories: Scoring, Chance Quality, Defence, Danger Suppression, Goaltending, Puck Control, Pressure, Discipline.</p></div>
+        <div class='csb-table-scroll'><table><thead><tr><th>Category</th><th>Metric</th><th>COL value</th><th>Playoff Avg</th><th>Difference</th><th>% Difference</th><th>Rank</th><th>Better?</th><th>Final-four trait?</th></tr></thead><tbody>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Goals share</strong></td>
+          <td>61.7%</td>
+          <td>47.3%</td>
+          <td class='yes'>+14.4 pts</td>
+          <td class='yes'>+30.5%</td>
+          <td>2</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Goals per game</strong></td>
+          <td>4.11</td>
+          <td>2.73</td>
+          <td class='yes'>+1.38</td>
+          <td class='yes'>+50.5%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Shooting percentage</strong></td>
+          <td>12.6%</td>
+          <td>9.6%</td>
+          <td class='yes'>+3.1 pts</td>
+          <td class='yes'>+32.2%</td>
+          <td>3</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Chance Quality</span></td>
+          <td><strong>Expected goals share</strong></td>
+          <td>59.0%</td>
+          <td>49.1%</td>
+          <td class='yes'>+9.9 pts</td>
+          <td class='yes'>+20.3%</td>
+          <td>2</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Chance Quality</span></td>
+          <td><strong>Expected goals for per game</strong></td>
+          <td>4.02</td>
+          <td>3.18</td>
+          <td class='yes'>+0.84</td>
+          <td class='yes'>+26.3%</td>
+          <td>2</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defence</span></td>
+          <td><strong>Goals allowed per game</strong></td>
+          <td>2.56</td>
+          <td>2.99</td>
+          <td class='yes'>+0.43</td>
+          <td class='yes'>+14.5%</td>
+          <td>4</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defence</span></td>
+          <td><strong>Expected goals against per game</strong></td>
+          <td>2.82</td>
+          <td>3.31</td>
+          <td class='yes'>+0.49</td>
+          <td class='yes'>+14.8%</td>
+          <td>3</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Danger Suppression</span></td>
+          <td><strong>High-danger xG allowed per game</strong></td>
+          <td>1.22</td>
+          <td>1.39</td>
+          <td class='yes'>+0.17</td>
+          <td class='yes'>+12.5%</td>
+          <td>5</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Danger Suppression</span></td>
+          <td><strong>High-danger shots allowed per game</strong></td>
+          <td>3.78</td>
+          <td>3.86</td>
+          <td class='yes'>+0.08</td>
+          <td class='yes'>+2.1%</td>
+          <td>9</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Goaltending</span></td>
+          <td><strong>Save percentage</strong></td>
+          <td>90.2%</td>
+          <td>89.7%</td>
+          <td class='yes'>+0.5 pts</td>
+          <td class='yes'>+0.6%</td>
+          <td>6</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Puck Control</span></td>
+          <td><strong>Corsi share</strong></td>
+          <td>55.0%</td>
+          <td>49.9%</td>
+          <td class='yes'>+5.1 pts</td>
+          <td class='yes'>+10.3%</td>
+          <td>5</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Puck Control</span></td>
+          <td><strong>Fenwick share</strong></td>
+          <td>55.0%</td>
+          <td>49.6%</td>
+          <td class='yes'>+5.4 pts</td>
+          <td class='yes'>+11.0%</td>
+          <td>4</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Pressure</span></td>
+          <td><strong>Takeaways per game</strong></td>
+          <td>5.11</td>
+          <td>4.72</td>
+          <td class='yes'>+0.39</td>
+          <td class='yes'>+8.2%</td>
+          <td>5</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Discipline</span></td>
+          <td><strong>Penalties taken per game</strong></td>
+          <td>3.89</td>
+          <td>4.78</td>
+          <td class='yes'>+0.89</td>
+          <td class='yes'>+18.7%</td>
+          <td>4</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defensive Effort</span></td>
+          <td><strong>Blocked shots per game</strong></td>
+          <td>16.44</td>
+          <td>17.07</td>
+          <td class='no'>-0.63</td>
+          <td class='no'>-3.7%</td>
+          <td>11</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr></tbody></table></div>
+      </div>
+    
+      <div class='csb-tab-panel' id='tab-VGK'>
+        <div class='csb-panel-intro'><p><strong>Vegas Golden Knights:</strong> Vegas Golden Knights was better than the playoff average in 13 of 15 selected performance metrics. Key above-average categories: Scoring, Chance Quality, Defence, Danger Suppression, Goaltending, Pressure, Discipline, Defensive Effort.</p></div>
+        <div class='csb-table-scroll'><table><thead><tr><th>Category</th><th>Metric</th><th>VGK value</th><th>Playoff Avg</th><th>Difference</th><th>% Difference</th><th>Rank</th><th>Better?</th><th>Final-four trait?</th></tr></thead><tbody>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Goals share</strong></td>
+          <td>58.7%</td>
+          <td>47.3%</td>
+          <td class='yes'>+11.4 pts</td>
+          <td class='yes'>+24.1%</td>
+          <td>3</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Goals per game</strong></td>
+          <td>3.67</td>
+          <td>2.73</td>
+          <td class='yes'>+0.93</td>
+          <td class='yes'>+34.2%</td>
+          <td>3</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Shooting percentage</strong></td>
+          <td>13.3%</td>
+          <td>9.6%</td>
+          <td class='yes'>+3.8 pts</td>
+          <td class='yes'>+39.6%</td>
+          <td>1</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Chance Quality</span></td>
+          <td><strong>Expected goals share</strong></td>
+          <td>54.0%</td>
+          <td>49.1%</td>
+          <td class='yes'>+4.9 pts</td>
+          <td class='yes'>+10.1%</td>
+          <td>4</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Chance Quality</span></td>
+          <td><strong>Expected goals for per game</strong></td>
+          <td>3.40</td>
+          <td>3.18</td>
+          <td class='yes'>+0.22</td>
+          <td class='yes'>+6.8%</td>
+          <td>4</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defence</span></td>
+          <td><strong>Goals allowed per game</strong></td>
+          <td>2.58</td>
+          <td>2.99</td>
+          <td class='yes'>+0.41</td>
+          <td class='yes'>+13.6%</td>
+          <td>5</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defence</span></td>
+          <td><strong>Expected goals against per game</strong></td>
+          <td>2.89</td>
+          <td>3.31</td>
+          <td class='yes'>+0.42</td>
+          <td class='yes'>+12.7%</td>
+          <td>4</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Danger Suppression</span></td>
+          <td><strong>High-danger xG allowed per game</strong></td>
+          <td>0.96</td>
+          <td>1.39</td>
+          <td class='yes'>+0.43</td>
+          <td class='yes'>+31.2%</td>
+          <td>2</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Danger Suppression</span></td>
+          <td><strong>High-danger shots allowed per game</strong></td>
+          <td>3.00</td>
+          <td>3.86</td>
+          <td class='yes'>+0.86</td>
+          <td class='yes'>+22.3%</td>
+          <td>2</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Goaltending</span></td>
+          <td><strong>Save percentage</strong></td>
+          <td>91.2%</td>
+          <td>89.7%</td>
+          <td class='yes'>+1.5 pts</td>
+          <td class='yes'>+1.7%</td>
+          <td>4</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Puck Control</span></td>
+          <td><strong>Corsi share</strong></td>
+          <td>48.0%</td>
+          <td>49.9%</td>
+          <td class='no'>-1.9 pts</td>
+          <td class='no'>-3.8%</td>
+          <td>8</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Puck Control</span></td>
+          <td><strong>Fenwick share</strong></td>
+          <td>48.0%</td>
+          <td>49.6%</td>
+          <td class='no'>-1.6 pts</td>
+          <td class='no'>-3.2%</td>
+          <td>8</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Pressure</span></td>
+          <td><strong>Takeaways per game</strong></td>
+          <td>5.08</td>
+          <td>4.72</td>
+          <td class='yes'>+0.36</td>
+          <td class='yes'>+7.6%</td>
+          <td>6</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Discipline</span></td>
+          <td><strong>Penalties taken per game</strong></td>
+          <td>3.92</td>
+          <td>4.78</td>
+          <td class='yes'>+0.87</td>
+          <td class='yes'>+18.1%</td>
+          <td>5</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defensive Effort</span></td>
+          <td><strong>Blocked shots per game</strong></td>
+          <td>18.08</td>
+          <td>17.07</td>
+          <td class='yes'>+1.01</td>
+          <td class='yes'>+5.9%</td>
+          <td>6</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr></tbody></table></div>
+      </div>
+    
+      <div class='csb-tab-panel' id='tab-MTL'>
+        <div class='csb-panel-intro'><p><strong>Montreal Canadiens:</strong> Montreal Canadiens was better than the playoff average in 9 of 15 selected performance metrics. Key above-average categories: Scoring, Defence, Danger Suppression, Goaltending, Pressure, Defensive Effort.</p></div>
+        <div class='csb-table-scroll'><table><thead><tr><th>Category</th><th>Metric</th><th>MTL value</th><th>Playoff Avg</th><th>Difference</th><th>% Difference</th><th>Rank</th><th>Better?</th><th>Final-four trait?</th></tr></thead><tbody>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Goals share</strong></td>
+          <td>53.1%</td>
+          <td>47.3%</td>
+          <td class='yes'>+5.8 pts</td>
+          <td class='yes'>+12.3%</td>
+          <td>4</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Goals per game</strong></td>
+          <td>3.07</td>
+          <td>2.73</td>
+          <td class='yes'>+0.34</td>
+          <td class='yes'>+12.4%</td>
+          <td>7</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Scoring</span></td>
+          <td><strong>Shooting percentage</strong></td>
+          <td>12.2%</td>
+          <td>9.6%</td>
+          <td class='yes'>+2.6 pts</td>
+          <td class='yes'>+27.5%</td>
+          <td>5</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Chance Quality</span></td>
+          <td><strong>Expected goals share</strong></td>
+          <td>48.0%</td>
+          <td>49.1%</td>
+          <td class='no'>-1.1 pts</td>
+          <td class='no'>-2.2%</td>
+          <td>9</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Chance Quality</span></td>
+          <td><strong>Expected goals for per game</strong></td>
+          <td>3.17</td>
+          <td>3.18</td>
+          <td class='no'>-0.01</td>
+          <td class='no'>-0.4%</td>
+          <td>6</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defence</span></td>
+          <td><strong>Goals allowed per game</strong></td>
+          <td>2.71</td>
+          <td>2.99</td>
+          <td class='yes'>+0.28</td>
+          <td class='yes'>+9.2%</td>
+          <td>7</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defence</span></td>
+          <td><strong>Expected goals against per game</strong></td>
+          <td>3.43</td>
+          <td>3.31</td>
+          <td class='no'>-0.11</td>
+          <td class='no'>-3.4%</td>
+          <td>11</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Danger Suppression</span></td>
+          <td><strong>High-danger xG allowed per game</strong></td>
+          <td>1.30</td>
+          <td>1.39</td>
+          <td class='yes'>+0.08</td>
+          <td class='yes'>+6.1%</td>
+          <td>7</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Danger Suppression</span></td>
+          <td><strong>High-danger shots allowed per game</strong></td>
+          <td>3.50</td>
+          <td>3.86</td>
+          <td class='yes'>+0.36</td>
+          <td class='yes'>+9.3%</td>
+          <td>7</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Goaltending</span></td>
+          <td><strong>Save percentage</strong></td>
+          <td>90.5%</td>
+          <td>89.7%</td>
+          <td class='yes'>+0.9 pts</td>
+          <td class='yes'>+1.0%</td>
+          <td>5</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Puck Control</span></td>
+          <td><strong>Corsi share</strong></td>
+          <td>46.0%</td>
+          <td>49.9%</td>
+          <td class='no'>-3.9 pts</td>
+          <td class='no'>-7.8%</td>
+          <td>11</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Puck Control</span></td>
+          <td><strong>Fenwick share</strong></td>
+          <td>46.0%</td>
+          <td>49.6%</td>
+          <td class='no'>-3.6 pts</td>
+          <td class='no'>-7.2%</td>
+          <td>11</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Pressure</span></td>
+          <td><strong>Takeaways per game</strong></td>
+          <td>4.93</td>
+          <td>4.72</td>
+          <td class='yes'>+0.21</td>
+          <td class='yes'>+4.4%</td>
+          <td>8</td>
+          <td>Yes</td>
+          <td>Shared</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Discipline</span></td>
+          <td><strong>Penalties taken per game</strong></td>
+          <td>5.50</td>
+          <td>4.78</td>
+          <td class='no'>-0.72</td>
+          <td class='no'>-15.0%</td>
+          <td>12</td>
+          <td>No</td>
+          <td>Team-specific</td>
+        </tr>
+        <tr>
+          <td><span class='cat'>Defensive Effort</span></td>
+          <td><strong>Blocked shots per game</strong></td>
+          <td>18.07</td>
+          <td>17.07</td>
+          <td class='yes'>+1.00</td>
+          <td class='yes'>+5.8%</td>
+          <td>7</td>
+          <td>Yes</td>
+          <td>Team-specific</td>
+        </tr></tbody></table></div>
+      </div>
+    
+    </div>
+  </section>
+
+  <section class='csb-section'>
+    <div class='csb-kicker'>Roster context</div>
+    <h2>Size is not the final-four blueprint</h2>
+    <p>The roster data adds useful context, but it should not be treated as the main explanation. The performance data shows clear shared traits; the roster data shows that teams can reach this stage with different age and size profiles.</p>
+    <div class='csb-roster-grid'>
+      <div class='csb-roster-metric'><span>28.21</span><h3>Avg age</h3><p>Final four average vs 28.10 playoff-team average.</p></div>
+      <div class='csb-roster-metric'><span>73.50 in</span><h3>Avg height</h3><p>Final four average vs 73.68 inches across playoff teams.</p></div>
+      <div class='csb-roster-metric'><span>200.61 lbs</span><h3>Avg weight</h3><p>Final four average vs 202.20 lbs across playoff teams.</p></div>
+    </div>
+    <div class='csb-callout'><p>While the final four share clear on-ice performance traits, their roster profiles are less uniform. Three of the four are shorter and lighter than the playoff-team average, but only Montreal is younger, suggesting there is no single age-or-size blueprint for a deep playoff run.</p></div>
+  </section>
+
+
+
+  <section class='csb-section csb-data-hub-section'>
+    <div class='csb-kicker'>Data tables</div>
+    <h2>Full dataset in clean tables</h2>
+    <p>The raw workbook tabs have been condensed into a landing-page-friendly data hub. Start with the shared final-four metrics, then move through team performance, roster context and the cleaned MoneyPuck input data.</p>
+    <div class='csb-tabs js-tabs' id='csbDataTabs' data-prefix='data'>
+      <div class='csb-tab-nav'>
+        <button class='csb-tab-btn active' data-tab='shared'>Shared metrics</button>
+        <button class='csb-tab-btn' data-tab='summary'>Team summary</button>
+        <button class='csb-tab-btn' data-tab='team-detail'>Team metrics</button>
+        <button class='csb-tab-btn' data-tab='roster-summary'>Roster snapshot</button>
+        <button class='csb-tab-btn' data-tab='roster-all'>Roster comparison</button>
+        <button class='csb-tab-btn' data-tab='raw'>MoneyPuck input</button>
+      </div>
+      <div class='csb-tab-panel active' id='data-shared'><div class='csb-panel-intro'><p><strong>Shared metrics:</strong> These are the seven metrics where all four final-four teams were better than the playoff-team average.</p></div><div class='csb-table-scroll'><table class='csb-data-table'><thead><tr><th>Category</th><th>Metric</th><th>Final Four Avg</th><th>Playoff Avg</th><th>Difference</th><th>% Difference</th><th>Finding</th></tr></thead><tbody><tr><td><span class='cat'>Scoring</span></td><td><strong>Goals share</strong></td><td>61.0%</td><td>47.3%</td><td><strong>+13.7 pts</strong></td><td><strong>+29.0%</strong></td><td>The final four averaged 61.0% for goals share, which is +13.7 pts higher than the playoff-team average of 47.3%.</td></tr><tr><td><span class='cat'>Scoring</span></td><td><strong>Goals per game</strong></td><td>3.46</td><td>2.73</td><td><strong>+0.73</strong></td><td><strong>+26.8%</strong></td><td>The final four averaged 3.46 for goals per game, which is +0.73 higher than the playoff-team average of 2.73.</td></tr><tr><td><span class='cat'>Defence</span></td><td><strong>Goals allowed per game</strong></td><td>2.28</td><td>2.99</td><td><strong>+0.71</strong></td><td><strong>+23.9%</strong></td><td>The final four averaged 2.28 for goals allowed per game, which is +0.71 better/lower than the playoff-team average of 2.99.</td></tr><tr><td><span class='cat'>Danger Suppression</span></td><td><strong>High-danger xG allowed per game</strong></td><td>1.10</td><td>1.39</td><td><strong>+0.29</strong></td><td><strong>+20.9%</strong></td><td>The final four averaged 1.10 for high-danger xg allowed per game, which is +0.29 better/lower than the playoff-team average of 1.39.</td></tr><tr><td><span class='cat'>Danger Suppression</span></td><td><strong>High-danger shots allowed per game</strong></td><td>3.38</td><td>3.86</td><td><strong>+0.48</strong></td><td><strong>+12.4%</strong></td><td>The final four averaged 3.38 for high-danger shots allowed per game, which is +0.48 better/lower than the playoff-team average of 3.86.</td></tr><tr><td><span class='cat'>Goaltending</span></td><td><strong>Save percentage</strong></td><td>91.7%</td><td>89.7%</td><td><strong>+2.0 pts</strong></td><td><strong>+2.3%</strong></td><td>The final four averaged 91.7% for save percentage, which is +2.0 pts higher than the playoff-team average of 89.7%.</td></tr><tr><td><span class='cat'>Pressure</span></td><td><strong>Takeaways per game</strong></td><td>5.03</td><td>4.72</td><td><strong>+0.31</strong></td><td><strong>+6.6%</strong></td><td>The final four averaged 5.03 for takeaways per game, which is +0.31 higher than the playoff-team average of 4.72.</td></tr></tbody></table></div></div>
+      <div class='csb-tab-panel' id='data-summary'><div class='csb-panel-intro'><p><strong>Team summary:</strong> This is the clean version of the workbook summary tab, showing how many metrics and categories each team cleared.</p></div><div class='csb-table-scroll'><table class='csb-data-table'><thead><tr><th>Team</th><th>Team Name</th><th>Metrics Above Avg</th><th>Categories</th><th>Category List</th><th>Metric List</th></tr></thead><tbody><tr><td><strong>CAR</strong></td><td>Carolina Hurricanes</td><td><strong>12 of 15</strong></td><td><strong>7 categories</strong></td><td>Scoring, Chance Quality, Defence, Danger Suppression, Goaltending, Puck Control, Pressure</td><td>Goals share, Goals per game, Expected goals share, Expected goals for per game, Goals allowed per game, Expected goals against per game, High-danger xG allowed per game, High-danger shots allowed per game, Save percentage, Corsi share, Fenwick share, Takeaways per game</td></tr><tr><td><strong>COL</strong></td><td>Colorado Avalanche</td><td><strong>14 of 15</strong></td><td><strong>8 categories</strong></td><td>Scoring, Chance Quality, Defence, Danger Suppression, Goaltending, Puck Control, Pressure, Discipline</td><td>Goals share, Goals per game, Shooting percentage, Expected goals share, Expected goals for per game, Goals allowed per game, Expected goals against per game, High-danger xG allowed per game, High-danger shots allowed per game, Save percentage, Corsi share, Fenwick share, Takeaways per game, Penalties taken per game</td></tr><tr><td><strong>VGK</strong></td><td>Vegas Golden Knights</td><td><strong>13 of 15</strong></td><td><strong>8 categories</strong></td><td>Scoring, Chance Quality, Defence, Danger Suppression, Goaltending, Pressure, Discipline, Defensive Effort</td><td>Goals share, Goals per game, Shooting percentage, Expected goals share, Expected goals for per game, Goals allowed per game, Expected goals against per game, High-danger xG allowed per game, High-danger shots allowed per game, Save percentage, Takeaways per game, Penalties taken per game, Blocked shots per game</td></tr><tr><td><strong>MTL</strong></td><td>Montreal Canadiens</td><td><strong>9 of 15</strong></td><td><strong>6 categories</strong></td><td>Scoring, Defence, Danger Suppression, Goaltending, Pressure, Defensive Effort</td><td>Goals share, Goals per game, Shooting percentage, Goals allowed per game, High-danger xG allowed per game, High-danger shots allowed per game, Save percentage, Takeaways per game, Blocked shots per game</td></tr><tr><td><strong>Overall Commonality</strong></td><td>Shared final-four traits</td><td><strong>7 shared metrics</strong></td><td><strong>5 shared categories</strong></td><td>Scoring, Defence, Danger Suppression, Goaltending, Pressure</td><td>Goals share, Goals per game, Goals allowed per game, High-danger xG allowed per game, High-danger shots allowed per game, Save percentage, Takeaways per game</td></tr></tbody></table></div></div>
+      <div class='csb-tab-panel' id='data-team-detail'><div class='csb-panel-intro'><p><strong>Team metrics:</strong> The individual CAR, COL, VGK and MTL sheets are combined into one clean reference table.</p></div><div class='csb-table-scroll'><table class='csb-data-table'><thead><tr><th>Team</th><th>Category</th><th>Metric</th><th>Team Value</th><th>Playoff Avg</th><th>Difference</th><th>% Difference</th><th>Rank</th><th>Better?</th><th>Shared Trait?</th></tr></thead><tbody><tr><td><strong>CAR</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Goals share</strong></td><td>70.6%</td><td>47.3%</td><td><strong>+23.3 pts</strong></td><td><strong>+49.3%</strong></td><td>1</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Goals per game</strong></td><td>3.00</td><td>2.73</td><td><strong>+0.27</strong></td><td><strong>+9.8%</strong></td><td>9</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Shooting percentage</strong></td><td>8.9%</td><td>9.6%</td><td><strong>-0.7 pts</strong></td><td><strong>-7.3%</strong></td><td>9</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Chance Quality</span></td><td><strong>Expected goals share</strong></td><td>62.0%</td><td>49.1%</td><td><strong>+12.9 pts</strong></td><td><strong>+26.4%</strong></td><td>1</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Chance Quality</span></td><td><strong>Expected goals for per game</strong></td><td>4.33</td><td>3.18</td><td><strong>+1.15</strong></td><td><strong>+36.1%</strong></td><td>1</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Defence</span></td><td><strong>Goals allowed per game</strong></td><td>1.25</td><td>2.99</td><td><strong>+1.74</strong></td><td><strong>+58.2%</strong></td><td>1</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Defence</span></td><td><strong>Expected goals against per game</strong></td><td>2.65</td><td>3.31</td><td><strong>+0.66</strong></td><td><strong>+20.0%</strong></td><td>1</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Danger Suppression</span></td><td><strong>High-danger xG allowed per game</strong></td><td>0.92</td><td>1.39</td><td><strong>+0.47</strong></td><td><strong>+34.1%</strong></td><td>1</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Danger Suppression</span></td><td><strong>High-danger shots allowed per game</strong></td><td>3.25</td><td>3.86</td><td><strong>+0.61</strong></td><td><strong>+15.8%</strong></td><td>4</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Goaltending</span></td><td><strong>Save percentage</strong></td><td>95.0%</td><td>89.7%</td><td><strong>+5.3 pts</strong></td><td><strong>+5.9%</strong></td><td>1</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Puck Control</span></td><td><strong>Corsi share</strong></td><td>59.0%</td><td>49.9%</td><td><strong>+9.1 pts</strong></td><td><strong>+18.3%</strong></td><td>1</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Puck Control</span></td><td><strong>Fenwick share</strong></td><td>59.0%</td><td>49.6%</td><td><strong>+9.4 pts</strong></td><td><strong>+19.0%</strong></td><td>1</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Pressure</span></td><td><strong>Takeaways per game</strong></td><td>5.00</td><td>4.72</td><td><strong>+0.28</strong></td><td><strong>+5.9%</strong></td><td>7</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Discipline</span></td><td><strong>Penalties taken per game</strong></td><td>6.25</td><td>4.78</td><td><strong>-1.47</strong></td><td><strong>-30.7%</strong></td><td>15</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>CAR</strong></td><td><span class='cat'>Defensive Effort</span></td><td><strong>Blocked shots per game</strong></td><td>14.25</td><td>17.07</td><td><strong>-2.82</strong></td><td><strong>-16.5%</strong></td><td>14</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Goals share</strong></td><td>61.7%</td><td>47.3%</td><td><strong>+14.4 pts</strong></td><td><strong>+30.5%</strong></td><td>2</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Goals per game</strong></td><td>4.11</td><td>2.73</td><td><strong>+1.38</strong></td><td><strong>+50.5%</strong></td><td>1</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Shooting percentage</strong></td><td>12.6%</td><td>9.6%</td><td><strong>+3.1 pts</strong></td><td><strong>+32.2%</strong></td><td>3</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Chance Quality</span></td><td><strong>Expected goals share</strong></td><td>59.0%</td><td>49.1%</td><td><strong>+9.9 pts</strong></td><td><strong>+20.3%</strong></td><td>2</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Chance Quality</span></td><td><strong>Expected goals for per game</strong></td><td>4.02</td><td>3.18</td><td><strong>+0.84</strong></td><td><strong>+26.3%</strong></td><td>2</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Defence</span></td><td><strong>Goals allowed per game</strong></td><td>2.56</td><td>2.99</td><td><strong>+0.43</strong></td><td><strong>+14.5%</strong></td><td>4</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Defence</span></td><td><strong>Expected goals against per game</strong></td><td>2.82</td><td>3.31</td><td><strong>+0.49</strong></td><td><strong>+14.8%</strong></td><td>3</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Danger Suppression</span></td><td><strong>High-danger xG allowed per game</strong></td><td>1.22</td><td>1.39</td><td><strong>+0.17</strong></td><td><strong>+12.5%</strong></td><td>5</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Danger Suppression</span></td><td><strong>High-danger shots allowed per game</strong></td><td>3.78</td><td>3.86</td><td><strong>+0.08</strong></td><td><strong>+2.1%</strong></td><td>9</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Goaltending</span></td><td><strong>Save percentage</strong></td><td>90.2%</td><td>89.7%</td><td><strong>+0.5 pts</strong></td><td><strong>+0.6%</strong></td><td>6</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Puck Control</span></td><td><strong>Corsi share</strong></td><td>55.0%</td><td>49.9%</td><td><strong>+5.1 pts</strong></td><td><strong>+10.3%</strong></td><td>5</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Puck Control</span></td><td><strong>Fenwick share</strong></td><td>55.0%</td><td>49.6%</td><td><strong>+5.4 pts</strong></td><td><strong>+11.0%</strong></td><td>4</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Pressure</span></td><td><strong>Takeaways per game</strong></td><td>5.11</td><td>4.72</td><td><strong>+0.39</strong></td><td><strong>+8.2%</strong></td><td>5</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Discipline</span></td><td><strong>Penalties taken per game</strong></td><td>3.89</td><td>4.78</td><td><strong>+0.89</strong></td><td><strong>+18.7%</strong></td><td>4</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>COL</strong></td><td><span class='cat'>Defensive Effort</span></td><td><strong>Blocked shots per game</strong></td><td>16.44</td><td>17.07</td><td><strong>-0.63</strong></td><td><strong>-3.7%</strong></td><td>11</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Goals share</strong></td><td>58.7%</td><td>47.3%</td><td><strong>+11.4 pts</strong></td><td><strong>+24.1%</strong></td><td>3</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Goals per game</strong></td><td>3.67</td><td>2.73</td><td><strong>+0.93</strong></td><td><strong>+34.2%</strong></td><td>3</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Shooting percentage</strong></td><td>13.3%</td><td>9.6%</td><td><strong>+3.8 pts</strong></td><td><strong>+39.6%</strong></td><td>1</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Chance Quality</span></td><td><strong>Expected goals share</strong></td><td>54.0%</td><td>49.1%</td><td><strong>+4.9 pts</strong></td><td><strong>+10.1%</strong></td><td>4</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Chance Quality</span></td><td><strong>Expected goals for per game</strong></td><td>3.40</td><td>3.18</td><td><strong>+0.22</strong></td><td><strong>+6.8%</strong></td><td>4</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Defence</span></td><td><strong>Goals allowed per game</strong></td><td>2.58</td><td>2.99</td><td><strong>+0.41</strong></td><td><strong>+13.6%</strong></td><td>5</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Defence</span></td><td><strong>Expected goals against per game</strong></td><td>2.89</td><td>3.31</td><td><strong>+0.42</strong></td><td><strong>+12.7%</strong></td><td>4</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Danger Suppression</span></td><td><strong>High-danger xG allowed per game</strong></td><td>0.96</td><td>1.39</td><td><strong>+0.43</strong></td><td><strong>+31.2%</strong></td><td>2</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Danger Suppression</span></td><td><strong>High-danger shots allowed per game</strong></td><td>3.00</td><td>3.86</td><td><strong>+0.86</strong></td><td><strong>+22.3%</strong></td><td>2</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Goaltending</span></td><td><strong>Save percentage</strong></td><td>91.2%</td><td>89.7%</td><td><strong>+1.5 pts</strong></td><td><strong>+1.7%</strong></td><td>4</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Puck Control</span></td><td><strong>Corsi share</strong></td><td>48.0%</td><td>49.9%</td><td><strong>-1.9 pts</strong></td><td><strong>-3.8%</strong></td><td>8</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Puck Control</span></td><td><strong>Fenwick share</strong></td><td>48.0%</td><td>49.6%</td><td><strong>-1.6 pts</strong></td><td><strong>-3.2%</strong></td><td>8</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Pressure</span></td><td><strong>Takeaways per game</strong></td><td>5.08</td><td>4.72</td><td><strong>+0.36</strong></td><td><strong>+7.6%</strong></td><td>6</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Discipline</span></td><td><strong>Penalties taken per game</strong></td><td>3.92</td><td>4.78</td><td><strong>+0.87</strong></td><td><strong>+18.1%</strong></td><td>5</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>VGK</strong></td><td><span class='cat'>Defensive Effort</span></td><td><strong>Blocked shots per game</strong></td><td>18.08</td><td>17.07</td><td><strong>+1.01</strong></td><td><strong>+5.9%</strong></td><td>6</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Goals share</strong></td><td>53.1%</td><td>47.3%</td><td><strong>+5.8 pts</strong></td><td><strong>+12.3%</strong></td><td>4</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Goals per game</strong></td><td>3.07</td><td>2.73</td><td><strong>+0.34</strong></td><td><strong>+12.4%</strong></td><td>7</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Scoring</span></td><td><strong>Shooting percentage</strong></td><td>12.2%</td><td>9.6%</td><td><strong>+2.6 pts</strong></td><td><strong>+27.5%</strong></td><td>5</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Chance Quality</span></td><td><strong>Expected goals share</strong></td><td>48.0%</td><td>49.1%</td><td><strong>-1.1 pts</strong></td><td><strong>-2.2%</strong></td><td>9</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Chance Quality</span></td><td><strong>Expected goals for per game</strong></td><td>3.17</td><td>3.18</td><td><strong>-0.01</strong></td><td><strong>-0.4%</strong></td><td>6</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Defence</span></td><td><strong>Goals allowed per game</strong></td><td>2.71</td><td>2.99</td><td><strong>+0.28</strong></td><td><strong>+9.2%</strong></td><td>7</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Defence</span></td><td><strong>Expected goals against per game</strong></td><td>3.43</td><td>3.31</td><td><strong>-0.11</strong></td><td><strong>-3.4%</strong></td><td>11</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Danger Suppression</span></td><td><strong>High-danger xG allowed per game</strong></td><td>1.30</td><td>1.39</td><td><strong>+0.08</strong></td><td><strong>+6.1%</strong></td><td>7</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Danger Suppression</span></td><td><strong>High-danger shots allowed per game</strong></td><td>3.50</td><td>3.86</td><td><strong>+0.36</strong></td><td><strong>+9.3%</strong></td><td>7</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Goaltending</span></td><td><strong>Save percentage</strong></td><td>90.5%</td><td>89.7%</td><td><strong>+0.9 pts</strong></td><td><strong>+1.0%</strong></td><td>5</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Puck Control</span></td><td><strong>Corsi share</strong></td><td>46.0%</td><td>49.9%</td><td><strong>-3.9 pts</strong></td><td><strong>-7.8%</strong></td><td>11</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Puck Control</span></td><td><strong>Fenwick share</strong></td><td>46.0%</td><td>49.6%</td><td><strong>-3.6 pts</strong></td><td><strong>-7.2%</strong></td><td>11</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Pressure</span></td><td><strong>Takeaways per game</strong></td><td>4.93</td><td>4.72</td><td><strong>+0.21</strong></td><td><strong>+4.4%</strong></td><td>8</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Discipline</span></td><td><strong>Penalties taken per game</strong></td><td>5.50</td><td>4.78</td><td><strong>-0.72</strong></td><td><strong>-15.0%</strong></td><td>12</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>MTL</strong></td><td><span class='cat'>Defensive Effort</span></td><td><strong>Blocked shots per game</strong></td><td>18.07</td><td>17.07</td><td><strong>+1.00</strong></td><td><strong>+5.8%</strong></td><td>7</td><td class='yes'>Yes</td><td class='no'>No</td></tr></tbody></table></div></div>
+      <div class='csb-tab-panel' id='data-roster-summary'><div class='csb-panel-intro'><p><strong>Roster snapshot:</strong> The final four are slightly older on average, but also slightly shorter and lighter than the playoff-team average.</p></div><div class='csb-table-scroll'><table class='csb-data-table'><thead><tr><th>Trait</th><th>Final Four Average</th><th>Playoff Average</th><th>Difference</th><th>All Four Above Playoff Avg?</th><th>Plain English Finding</th></tr></thead><tbody><tr><td><span class='cat'>Average age</span></td><td>28.21</td><td>28.1</td><td><strong>0.11</strong></td><td class='no'>No</td><td>The final four averaged 28.21 years old, +0.11 years vs the playoff-team average.</td></tr><tr><td><span class='cat'>Average height</span></td><td>73.5</td><td>73.68</td><td><strong>-0.18</strong></td><td class='no'>No</td><td>The final four averaged 73.50 inches tall (6&#x27;2&quot;), -0.18 inches vs the playoff-team average.</td></tr><tr><td><span class='cat'>Average weight</span></td><td>200.61</td><td>202.2</td><td><strong>-1.59</strong></td><td class='no'>No</td><td>The final four averaged 200.61 lbs, -1.59 lbs vs the playoff-team average.</td></tr></tbody></table></div></div>
+      <div class='csb-tab-panel' id='data-roster-all'><div class='csb-panel-intro'><p><strong>Roster comparison:</strong> All playoff teams are shown below, with the final four listed first for easier comparison.</p></div><div class='csb-table-scroll'><table class='csb-data-table'><thead><tr><th>Team</th><th>Team Name</th><th>Avg Age</th><th>Avg Height (in)</th><th>Avg Height</th><th>Avg Weight (lbs)</th><th>Age vs Avg</th><th>Height vs Avg</th><th>Weight vs Avg</th><th>Final Four?</th><th>Older?</th><th>Taller?</th><th>Heavier?</th></tr></thead><tbody><tr><td><strong>CAR</strong></td><td><strong>Carolina Hurricanes</strong></td><td>28.81</td><td>73.58</td><td>6&#x27;2&quot;</td><td>201.96</td><td>0.71</td><td>-0.1</td><td>-0.24</td><td class='yes'>Yes</td><td class='yes'>Yes</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>COL</strong></td><td><strong>Colorado Avalanche</strong></td><td>29.77</td><td>73.19</td><td>6&#x27;1&quot;</td><td>196.73</td><td>1.67</td><td>-0.49</td><td>-5.47</td><td class='yes'>Yes</td><td class='yes'>Yes</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>VGK</strong></td><td><strong>Vegas Golden Knights</strong></td><td>28.8</td><td>74.0</td><td>6&#x27;2&quot;</td><td>202.43</td><td>0.7</td><td>0.32</td><td>0.23</td><td class='yes'>Yes</td><td class='yes'>Yes</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>MTL</strong></td><td><strong>Montreal Canadiens</strong></td><td>25.45</td><td>73.24</td><td>6&#x27;1&quot;</td><td>201.31</td><td>-2.65</td><td>-0.44</td><td>-0.89</td><td class='yes'>Yes</td><td class='no'>No</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>ANA</strong></td><td><strong>Anaheim Ducks</strong></td><td>26.66</td><td>74.06</td><td>6&#x27;2&quot;</td><td>208.38</td><td>-1.44</td><td>0.38</td><td>6.18</td><td class='no'>No</td><td class='no'>No</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>BOS</strong></td><td><strong>Boston Bruins</strong></td><td>27.48</td><td>73.68</td><td>6&#x27;2&quot;</td><td>204.64</td><td>-0.62</td><td>0.0</td><td>2.44</td><td class='no'>No</td><td class='no'>No</td><td class='no'>No</td><td class='yes'>Yes</td></tr><tr><td><strong>BUF</strong></td><td><strong>Buffalo Sabres</strong></td><td>26.19</td><td>73.97</td><td>6&#x27;2&quot;</td><td>204.32</td><td>-1.91</td><td>0.29</td><td>2.12</td><td class='no'>No</td><td class='no'>No</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>DAL</strong></td><td><strong>Dallas Stars</strong></td><td>29.04</td><td>74.29</td><td>6&#x27;2&quot;</td><td>206.25</td><td>0.94</td><td>0.61</td><td>4.05</td><td class='no'>No</td><td class='yes'>Yes</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>EDM</strong></td><td><strong>Edmonton Oilers</strong></td><td>29.31</td><td>73.73</td><td>6&#x27;2&quot;</td><td>203.04</td><td>1.21</td><td>0.05</td><td>0.84</td><td class='no'>No</td><td class='yes'>Yes</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>LAK</strong></td><td><strong>Los Angeles Kings</strong></td><td>29.48</td><td>74.12</td><td>6&#x27;2&quot;</td><td>205.32</td><td>1.38</td><td>0.44</td><td>3.12</td><td class='no'>No</td><td class='yes'>Yes</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>MIN</strong></td><td><strong>Minnesota Wild</strong></td><td>28.6</td><td>72.97</td><td>6&#x27;1&quot;</td><td>197.29</td><td>0.5</td><td>-0.71</td><td>-4.91</td><td class='no'>No</td><td class='yes'>Yes</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>OTT</strong></td><td><strong>Ottawa Senators</strong></td><td>27.58</td><td>73.85</td><td>6&#x27;2&quot;</td><td>206.0</td><td>-0.52</td><td>0.17</td><td>3.8</td><td class='no'>No</td><td class='no'>No</td><td class='yes'>Yes</td><td class='yes'>Yes</td></tr><tr><td><strong>PHI</strong></td><td><strong>Philadelphia Flyers</strong></td><td>26.29</td><td>73.66</td><td>6&#x27;2&quot;</td><td>199.03</td><td>-1.81</td><td>-0.02</td><td>-3.17</td><td class='no'>No</td><td class='no'>No</td><td class='no'>No</td><td class='no'>No</td></tr><tr><td><strong>PIT</strong></td><td><strong>Pittsburgh Penguins</strong></td><td>29.07</td><td>73.46</td><td>6&#x27;1&quot;</td><td>202.21</td><td>0.97</td><td>-0.22</td><td>0.01</td><td class='no'>No</td><td class='yes'>Yes</td><td class='no'>No</td><td class='yes'>Yes</td></tr><tr><td><strong>TBL</strong></td><td><strong>Tampa Bay Lightning</strong></td><td>29.19</td><td>74.0</td><td>6&#x27;2&quot;</td><td>200.22</td><td>1.09</td><td>0.32</td><td>-1.98</td><td class='no'>No</td><td class='yes'>Yes</td><td class='yes'>Yes</td><td class='no'>No</td></tr><tr><td><strong>UTA</strong></td><td><strong>UTA</strong></td><td>27.91</td><td>73.15</td><td>6&#x27;1&quot;</td><td>196.06</td><td>-0.19</td><td>-0.53</td><td>-6.14</td><td class='no'>No</td><td class='no'>No</td><td class='no'>No</td><td class='no'>No</td></tr></tbody></table></div></div>
+      <div class='csb-tab-panel' id='data-raw'><div class='csb-panel-intro'><p><strong>Cleaned MoneyPuck input:</strong> A simplified version of the all-situations MoneyPuck playoff team data, keeping only the most useful columns for the landing page.</p></div><div class='csb-table-scroll'><table class='csb-data-table'><thead><tr><th>Team</th><th>Games</th><th>xG %</th><th>Corsi %</th><th>Fenwick %</th><th>Goals For</th><th>Goals Against</th><th>Shots For</th><th>Shots Against</th><th>xG For</th><th>xG Against</th><th>HD Shots For</th><th>HD Shots Against</th><th>HD xG For</th><th>HD xG Against</th><th>Takeaways</th><th>Giveaways</th><th>Penalties</th></tr></thead><tbody><tr><td><strong>CAR</strong></td><td>8</td><td>62.0%</td><td>59.0%</td><td>59.0%</td><td>24</td><td>10</td><td>271</td><td>201</td><td>34.62</td><td>21.22</td><td>43</td><td>26</td><td>15.54</td><td>7.32</td><td>40</td><td>140</td><td>50</td></tr><tr><td><strong>COL</strong></td><td>9</td><td>59.0%</td><td>55.0%</td><td>55.0%</td><td>37</td><td>23</td><td>293</td><td>235</td><td>36.14</td><td>25.41</td><td>44</td><td>34</td><td>16.82</td><td>10.94</td><td>46</td><td>133</td><td>35</td></tr><tr><td><strong>VGK</strong></td><td>12</td><td>54.0%</td><td>48.0%</td><td>48.0%</td><td>44</td><td>31</td><td>330</td><td>353</td><td>40.77</td><td>34.7</td><td>51</td><td>36</td><td>18.31</td><td>11.47</td><td>61</td><td>210</td><td>47</td></tr><tr><td><strong>MTL</strong></td><td>14</td><td>48.0%</td><td>46.0%</td><td>46.0%</td><td>43</td><td>38</td><td>353</td><td>402</td><td>44.37</td><td>47.98</td><td>44</td><td>49</td><td>15.82</td><td>18.27</td><td>69</td><td>197</td><td>77</td></tr><tr><td><strong>ANA</strong></td><td>12</td><td>52.0%</td><td>56.0%</td><td>55.0%</td><td>39</td><td>42</td><td>380</td><td>316</td><td>40.25</td><td>37.79</td><td>50</td><td>49</td><td>16.82</td><td>16.55</td><td>50</td><td>174</td><td>35</td></tr><tr><td><strong>BOS</strong></td><td>6</td><td>43.0%</td><td>45.0%</td><td>44.0%</td><td>12</td><td>20</td><td>151</td><td>190</td><td>16.07</td><td>21.68</td><td>18</td><td>20</td><td>6.09</td><td>7.75</td><td>28</td><td>105</td><td>36</td></tr><tr><td><strong>BUF</strong></td><td>13</td><td>55.0%</td><td>53.0%</td><td>54.0%</td><td>43</td><td>39</td><td>396</td><td>348</td><td>50.24</td><td>41.51</td><td>53</td><td>41</td><td>20.45</td><td>14.91</td><td>53</td><td>192</td><td>66</td></tr><tr><td><strong>DAL</strong></td><td>6</td><td>49.0%</td><td>52.0%</td><td>51.0%</td><td>15</td><td>23</td><td>186</td><td>182</td><td>18.25</td><td>18.74</td><td>15</td><td>25</td><td>6.35</td><td>9.65</td><td>26</td><td>79</td><td>29</td></tr><tr><td><strong>EDM</strong></td><td>6</td><td>44.0%</td><td>46.0%</td><td>45.0%</td><td>21</td><td>26</td><td>170</td><td>194</td><td>17.18</td><td>22.0</td><td>19</td><td>28</td><td>6.27</td><td>10.28</td><td>31</td><td>101</td><td>19</td></tr><tr><td><strong>LAK</strong></td><td>4</td><td>43.0%</td><td>46.0%</td><td>45.0%</td><td>5</td><td>13</td><td>101</td><td>123</td><td>11.0</td><td>14.31</td><td>16</td><td>15</td><td>4.98</td><td>6.13</td><td>16</td><td>52</td><td>15</td></tr><tr><td><strong>MIN</strong></td><td>11</td><td>45.0%</td><td>46.0%</td><td>47.0%</td><td>41</td><td>39</td><td>316</td><td>356</td><td>33.14</td><td>40.08</td><td>43</td><td>44</td><td>15.61</td><td>17.05</td><td>46</td><td>154</td><td>48</td></tr><tr><td><strong>OTT</strong></td><td>4</td><td>40.0%</td><td>44.0%</td><td>43.0%</td><td>5</td><td>11</td><td>110</td><td>135</td><td>12.57</td><td>19.22</td><td>17</td><td>26</td><td>4.95</td><td>9.47</td><td>21</td><td>79</td><td>21</td></tr><tr><td><strong>PHI</strong></td><td>10</td><td>44.0%</td><td>42.0%</td><td>42.0%</td><td>21</td><td>24</td><td>246</td><td>295</td><td>26.59</td><td>33.98</td><td>34</td><td>39</td><td>11.44</td><td>13.98</td><td>47</td><td>162</td><td>64</td></tr><tr><td><strong>PIT</strong></td><td>6</td><td>51.0%</td><td>56.0%</td><td>55.0%</td><td>11</td><td>16</td><td>159</td><td>155</td><td>18.57</td><td>17.94</td><td>22</td><td>25</td><td>7.91</td><td>9.06</td><td>25</td><td>94</td><td>31</td></tr><tr><td><strong>TBL</strong></td><td>7</td><td>51.0%</td><td>56.0%</td><td>56.0%</td><td>15</td><td>16</td><td>196</td><td>156</td><td>19.42</td><td>18.93</td><td>16</td><td>21</td><td>5.57</td><td>7.0</td><td>39</td><td>95</td><td>40</td></tr><tr><td><strong>UTA</strong></td><td>6</td><td>45.0%</td><td>48.0%</td><td>48.0%</td><td>18</td><td>23</td><td>167</td><td>184</td><td>16.45</td><td>20.16</td><td>14</td><td>21</td><td>4.93</td><td>8.03</td><td>31</td><td>123</td><td>26</td></tr></tbody></table></div></div>
+    </div>
+  </section>
+
+  <section class='csb-section'>
+    <div class='csb-kicker'>Methodology</div>
+    <h2>How the analysis works</h2>
+    <p>This page combines the final-four performance blueprint with a light-touch roster profile to show <strong>what these teams are doing well</strong> and whether they also share a similar build.</p>
+    <div class='csb-method-wrap'>
+      <ul class='csb-method-list'>
+        <li><strong>Performance view:</strong> The on-ice analysis is based on <strong>MoneyPuck playoff team data</strong> across all situations.</li>
+        <li><strong>Comparison point:</strong> Each final-four team is measured against the <strong>average of all playoff teams</strong>, not against one another alone.</li>
+        <li><strong>Shared-trait rule:</strong> A metric only appears in the combined final-four table when <strong>all four teams</strong> were better than the playoff-team average.</li>
+        <li><strong>Roster profile:</strong> Age, height and weight are included as <strong>supporting context</strong> using NHL roster data.</li>
+        <li><strong>Main takeaway:</strong> The strongest common thread is <strong>performance execution</strong> — not a single age, height or weight blueprint.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+<script>
+(function(){
+  document.querySelectorAll('.js-tabs').forEach(root=>{
+    const prefix=root.getAttribute('data-prefix') || 'tab';
+    const buttons=root.querySelectorAll('.csb-tab-btn');
+    const panels=root.querySelectorAll('.csb-tab-panel');
+    buttons.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const id=btn.getAttribute('data-tab');
+        buttons.forEach(b=>b.classList.remove('active'));
+        panels.forEach(p=>p.classList.remove('active'));
+        btn.classList.add('active');
+        const panel=document.getElementById(prefix+'-'+id);
+        if(panel) panel.classList.add('active');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
